@@ -1,0 +1,81 @@
+<div style="margin: auto;" class="col-md-12">
+  <div *ngIf="currentFreelancer" class="edit-form">
+    <h4>Freelancer</h4>
+    <form>
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          [(ngModel)]="currentFreelancer.username"
+          name="username"
+        />
+      </div>
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          [(ngModel)]="currentFreelancer.phoneNumber"
+          name="phoneNumber"
+        />
+      </div>
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          [(ngModel)]="currentFreelancer.email"
+          name="email"
+        />
+      </div>
+      <!-- Skillset -->
+      <div class="form-group">
+        <label for="skillset">Skillset</label>
+        <input
+          type="text"
+          class="form-control"
+          id="skillset"
+          [(ngModel)]="currentFreelancer.skillset"
+          name="skillset"
+        />
+      </div>
+      <!-- Hobby -->
+      <div class="form-group">
+        <label for="hobby">Hobby</label>
+        <input
+          type="text"
+          class="form-control"
+          id="hobby"
+          [(ngModel)]="currentFreelancer.hobby"
+          name="hobby"
+        />
+      </div>      
+    </form>
+
+    <div *ngIf="message">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Succesful!</h4>
+        <p>You have successfully update your information.</p>
+        <hr>
+        <button type="button" class="btn btn-light" routerLink="/freelancers">Home</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" routerLink="/freelancers">Cancel</button>&nbsp;
+    <button type="button" class="btn btn-danger" (click)="deleteFreelancer()">Delete</button>&nbsp;
+    <button type="button" class="btn btn-success" (click)="updateFreelancer()">Update</button>    
+    
+  </div>
+
+  <div *ngIf="!currentFreelancer">
+    <br />
+    <p>Cannot access this Freelancer...</p>
+  </div>
+</div>

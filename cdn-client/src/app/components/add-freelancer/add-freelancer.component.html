@@ -1,0 +1,43 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <form>
+      <div class="form-row">        
+        <!-- Username -->
+        <div class="form-group col-md-6">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" required [(ngModel)]="freelancer.username" name="username" placeholder="Username">
+        </div>
+        <!-- Username -->
+        <div class="form-group col-md-6">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control" id="email" required [(ngModel)]="freelancer.email" name="email" placeholder="Email Address">
+        </div>
+        <!-- Phone Number -->
+        <div class="form-group col-md-6">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="freelancer.phoneNumber" name="phoneNumber" placeholder="Phone Number">
+        </div>
+        <!-- Hobby -->
+        <div class="form-group col-md-6">
+          <label for="hobby">Hobby</label>
+          <input type="text" class="form-control" id="hobby" required [(ngModel)]="freelancer.hobby" name="hobby" placeholder="Hobby">
+        </div>    
+      </div>      
+      <!-- Skillset -->
+      <div class="form-group">
+        <label for="skillset">Skillset</label>
+        <textarea class="form-control" id="skillset" required [(ngModel)]="freelancer.skillset" name="skillset" placeholder="Write about your skillset here."></textarea>
+      </div>
+            
+      <button (click)="saveFreelancer()" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="submitted">
+    <div class="alert alert-success" role="alert">
+      <h4>You submitted successfully!</h4>
+      <hr>
+      <button class="btn btn-success" (click)="newFreelancer()">Add a new Freelancer</button>&nbsp;
+      <button class="btn btn-info" routerLink="/freelancers">Home</button>
+    </div>    
+  </div>
+</div>
