@@ -1,11 +1,69 @@
-<div class="list row">  
+<div class="list row justify-content-between">
+  <!-- Right Card -->
+  <div class="col-md-8 card">
+    <!-- Title -->
+    <div class="mx-auto">
+      <br />
+      <h1 style="font-size: xx-large">
+        Please choose a Freelancer from table below.
+      </h1>
+    </div>
 
-  <div class="col-md-8">
-    <div *ngIf="currentFreelancer">     
-      <div class="card" style="width: 18rem;">
+    <div class="col-md-12">
+      <br />
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Skillset</th>
+              <th scope="col">Hobby</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let freelancer of freelancers; let i = index"
+              [class.active]="i == currentIndex"
+              (click)="setActiveFreelancer(freelancer, i)"
+            >
+              <th scope="row">{{ i }}</th>
+              <td>{{ freelancer.username }}</td>
+              <td>{{ freelancer.phoneNumber }}</td>
+              <td>{{ freelancer.email }}</td>
+              <td>{{ freelancer.skillset }}</td>
+              <td>{{ freelancer.hobby }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button
+        class="m-3 btn btn-sm btn-danger"
+        (click)="removeAllFreelancers()"
+      >
+        Remove All
+      </button>
+      <button class="m-3 btn btn-sm btn-primary float-right" routerLink="/add">
+        Add new Freelancer
+      </button>
+    </div>
+  </div>
+
+  <!-- Left Card -->
+  <div class="col-md-3 card">
+    <!-- Freelancer Information -->
+    <div *ngIf="currentFreelancer">
+      <br />
+      <div class="card">
         <div class="card-header">
           <strong>{{ currentFreelancer.username }} &nbsp; </strong>
-          <a class="badge badge-warning" routerLink="/freelancers/{{ currentFreelancer.id }}">
+          <a
+            class="badge badge-warning"
+            routerLink="/freelancers/{{ currentFreelancer.id }}"
+          >
             Edit
           </a>
         </div>
@@ -14,64 +72,27 @@
           <li class="list-group-item">{{ currentFreelancer.email }}</li>
           <li class="list-group-item">{{ currentFreelancer.hobby }}</li>
           <li class="list-group-item">{{ currentFreelancer.skillset }}</li>
-          
         </ul>
       </div>
-      <!--  -->
-
-      
-    </div>
-
-    <div *ngIf="!currentFreelancer">
       <br />
-      <h1>Please choose a Freelancer from table below.</h1>
     </div>
-  </div>
+    <!-- Faiz Profile Card -->
+    <div *ngIf="!currentFreelancer">
+      <div style="display: flex; justify-content: center">
+        <img
+          class="card-img-top"
+          src="../../../assets/faiz.jpg"
+          alt="Card image cap"
+          style="width: 10rem; height: 10rem"
+        />
+      </div>
 
-  <div class="col-md-4">
-    <!-- CARDS -->
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../../../assets/faiz.jpg" alt="Card image cap">
       <div class="card-body">
-        <p class="card-text">Hi, I'm Faiz. Software Developer that have been developing this website for Etiqa Assesment Task.</p>
+        <p class="card-text">
+          Hi, I'm Faiz. Software Developer that have been developing this simple
+          CRUD website using Angular + NodeJS API + MySQL for an assesment task.
+        </p>
       </div>
     </div>
-    <!--  --> 
   </div>
-</div>
-<br><br>
-<div class="col-md-12">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Username</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email Address</th>
-        <th scope="col">Skillset</th>
-        <th scope="col">Hobby</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr 
-      *ngFor="let freelancer of freelancers; let i = index"
-      [class.active]="i == currentIndex"
-      (click)="setActiveFreelancer(freelancer, i)">
-        <th scope="row">{{ i }}</th>
-        <td>{{ freelancer.username }}</td>
-        <td>{{ freelancer.phoneNumber }}</td>
-        <td>{{ freelancer.email }}</td>
-        <td>{{ freelancer.skillset }}</td>
-        <td>{{ freelancer.hobby }}</td>
-        
-      </tr>    
-    </tbody>
-  </table>
-  
-  <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFreelancers()">
-    Remove All
-  </button>
-  <button class="m-3 btn btn-sm btn-primary float-right" routerLink="/add">
-    Add new Freelancer
-  </button>
 </div>
