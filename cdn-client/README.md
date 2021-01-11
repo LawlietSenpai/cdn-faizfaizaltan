@@ -5,7 +5,7 @@
 2. Run `ng serve --port 8081` for a dev server. Navigate to `http://localhost:8081/`. The app will automatically reload if you change any of the source files.
 
 ## Explanation on this development projects.
-1. This web implementation only contains the simple CRUD applications as stated plus I didn't have enough time with the working time.Estimately I was working on this from 11pm 23 Dec to 8am 24 Dec. Hope this can meet your expections on the assesment task. This web-project is using Angular JS with NodeJS as REST API and Express for tools connecting to MySQL database. All are run from local environment. As for database connectivity, will be explain in the README.md in node-js-server application.
+1. This web implementation only contains the simple CRUD applications as stated plus I didn't have enough time with the working time. Hope this can meet your expections on the assesment task. This web-project is using Angular JS with NodeJS as REST API and Express for tools connecting to MySQL database. All are run from local environment. As for database connectivity, will be explain in the README.md in node-js-server application.
 
 2. First, lets start with the homepage which can be accessed by `http://localhost:8081/` OR `http://localhost:8081/freelancers`. This screen HTML source code was programmed in the freelancer-list.component.html as for the front-end. This screen containing tabulation of list of freelancers information from MySQL database. When this page reloads, it will use @GET method to NodeJS and using Express to connecting to MySQL database. As for the tabulation, I'm using looping of information into the table accordingly to username, phoneNumber, email, skillets and hobby with indexing from database.
 
