@@ -1,6 +1,6 @@
 # CDN - Faiz Faizal Tan CRUD Example
 
-In this project is a full-stack application (Angular 10 + Node.js + Express + MySQL) example with a CRUD Application. The back-end server uses Node.js + Express for REST APIs, front-end side is an Angular App with HTTPClient.
+In this project is a full-stack application (Angular 10 + Node.js + Express + MySQL) example with a CRUD Application. The back-end server uses Node.js + Express for REST APIs, front-end side is an Angular App with HTTPClient. Inside each folder contain its README.md for each application details.
 
 ## Project setup
 
