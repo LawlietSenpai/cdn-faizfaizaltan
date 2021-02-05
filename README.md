@@ -18,12 +18,13 @@ Run `ng serve --port 8081` for a dev server. Navigate to `http://localhost:8081/
 
 
 # Angular CRUD application example with Web API using Node JS with MySQL
-How to Run as localhost
+
+## How to Run as localhost
 
     Run npm install.
     Run ng serve --port 8081 for a dev server. Navigate to http://localhost:8081/. The app will automatically reload if you change any of the source files.
 
-Explanation on this development projects.
+## Explanation on this development projects.
 
     This web implementation only contains the simple CRUD applications as stated plus I didn't have enough time with the working time. Hope this can meet your expections on the assesment task. This web-project is using Angular JS with NodeJS as REST API and Express for tools connecting to MySQL database. All are run from local environment. As for database connectivity, will be explain in the README.md in node-js-server application.
 
